@@ -21,6 +21,7 @@
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
         <label for="stock_1"> Choose stock-1 </label>
+	    <br>
     	<select id="stock_1" name="stock_1" class="select">
           <option value="Facebook">Facebook</option>
           <option value="Apple">Apple</option>
@@ -35,6 +36,7 @@
         <br>
         <br>
         <label for="stock_2"> Choose stock-2 </label>
+	    <br>
     	<select id="stock_2" name="stock_2" class="select">
           <option value="Facebook">Facebook</option>
           <option value="Apple">Apple</option>
