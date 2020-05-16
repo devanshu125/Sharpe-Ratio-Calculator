@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Sharpe Ratio Calculator</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+ <div class="login">
+	<h1>Which one should I invest in?</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <label for="stock_1"> Choose stock-1 </label>
+    	<select id="stock_1" name="stock_1" class="select">
+          <option value="Facebook">Facebook</option>
+          <option value="Apple">Apple</option>
+          <option value="Google">Google</option>
+          <option value="Tesla">Tesla</option>
+          <option value="Intel">Intel</option>
+          <option value="Advanced Micro Devices">Advanced Micro Devices</option>
+          <option value="Microsoft">Microsoft</option>
+          <option value="Genpact">Genpact</option>
+        </select>
+
+        <br>
+        <br>
+        <label for="stock_2"> Choose stock-2 </label>
+    	<select id="stock_2" name="stock_2" class="select">
+          <option value="Facebook">Facebook</option>
+          <option value="Apple">Apple</option>
+          <option value="Google">Google</option>
+          <option value="Tesla">Tesla</option>
+          <option value="Intel">Intel</option>
+          <option value="Advanced Micro Devices">Advanced Micro Devices</option>
+          <option value="Microsoft">Microsoft</option>
+          <option value="Genpact">Genpact</option>
+        </select>
+        <br>
+        <br>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Calculate</button>
+    </form>
+    <br>
+      <a href="https://www.linkedin.com/pulse/risk-returns-sharpe-ratio-devanshu-ramaiya/" class="btn btn-primary btn-large"> Know more </a>
+ </div>
+
+
+</body>
+</html>

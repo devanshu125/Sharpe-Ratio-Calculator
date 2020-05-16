@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Sharpe Ratio Calculator</title>
+      <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    </head>
+
+    <body>
+      <div class="login">
+        <br>
+            {% if sharpe_0 > sharpe_1 %}
+            <h2> {{stock_1}} is a better choice! </h2>
+            <br>
+            <h4> {{stock_1}} has a Sharpe ratio of {{"%.2f" | format(sharpe_0)}} whereas, {{stock_2}}
+              has a Sharpe ratio of {{"%.2f" | format(sharpe_1)}}, hence the former is preferred. </h4>
+            {% elif sharpe_1 > sharpe_0 %}
+            <h2> {{stock_2}} is a better choice!</h2>
+            <h4> {{stock_1}} has a Sharpe ratio of {{"%.2f" | format(sharpe_0)}} whereas, {{stock_2}}
+              has a Sharpe ratio of {{"%.2f" | format(sharpe_1)}}, hence the latter is preferred. </h4>
+            {% else %}
+            <h2> Cannot decide. </h2>
+            <br>
+            <h3> It's possible that you have selected the same stock twice. Please change it. </h3>
+            {% endif %}
+            <br>
+            <a href="https://www.linkedin.com/pulse/risk-returns-sharpe-ratio-devanshu-ramaiya/" class="btn btn-primary btn-large"> Know more </a>
+      </div>
+
+    </body>
+</html>
